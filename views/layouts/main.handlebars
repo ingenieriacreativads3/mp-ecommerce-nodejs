@@ -53,5 +53,23 @@
             <circle class="mp-spinner-path" cx="50" cy="50" r="20" fill="none" stroke-miterlimit="10"></circle> </svg> 
         </div>
         <div id="ac-gn-viewport-emitter"> </div>
+        <script src="https://sdk.mercadopago.com/js/v2"></script>
+        <script>
+            // Agrega credenciales de SDK
+            const mp = new MercadoPago("dev_24c65fb163bf11ea96500242ac130004", {
+                locale: "es-AR",
+            });
+
+            // Inicializa el checkout
+            mp.checkout({
+                preference: {
+                    id: "469485398-154348cd-04cc-44f1-a63c-02b24de1567d",
+                },
+                render: {
+                    container: ".cho-container", // Indica el nombre de la clase donde se mostrará el botón de pago
+                    label: "Pagar la compra", // Cambia el texto del botón de pago (opcional)
+                },
+            });
+            </script>
     </body>
 </html>
