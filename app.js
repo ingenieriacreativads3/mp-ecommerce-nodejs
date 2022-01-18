@@ -31,4 +31,9 @@ app.get('/failure', function (req, res) {
     res.render('failure', req.query);
 });
 
+app.post('/exit', function (req, res) {
+    console.log(req.body)
+    res.send({})
+});
+
 app.listen(port);
