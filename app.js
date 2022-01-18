@@ -7,6 +7,9 @@ var app = express();
 app.engine('handlebars', exphbs());
 app.set('view engine', 'handlebars');
 
+app.use(express.urlencoded({ extended: false }))
+app.use(express.json())
+
 app.use(express.static('assets'));
  
 app.use('/assets', express.static(__dirname + '/assets'));
@@ -32,7 +35,7 @@ app.get('/failure', function (req, res) {
 });
 
 app.post('/exit', function (req, res) {
-    console.log(req)
+    console.log(req.body)
     res.send({})
 });
 
