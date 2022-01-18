@@ -32,7 +32,7 @@ app.get('/failure', function (req, res) {
 });
 
 app.post('/exit', function (req, res) {
-    console.log(req.body)
+    console.log(req)
     res.send({})
 });
 
